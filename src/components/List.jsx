@@ -11,33 +11,37 @@ function List({ search, rate }) {
     image: "",
     year: 0,
     rating: 0,
-  })
-  
+  });
+
   function handleAddMovie(e) {
-    e.preventDefault()
-    setMovieState([...movieState , newMovie])
+    e.preventDefault();
+    setMovieState([...movieState, newMovie]);
   }
   return (
     <div className="list">
       <div className="form">
-        <Form onChange={(e) => {setNewMovie({...newMovie, [e.target.name]:e.target.value })}} >
+        <Form className="form"
+          onChange={(e) => {
+            setNewMovie({ ...newMovie, [e.target.name]: e.target.value });
+          }}
+        >
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="text" placeholder="Title" name="title"/>
+            <Form.Control type="text" placeholder="Title" name="title" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="text" placeholder="Img src" name="image"/>
+            <Form.Control type="text" placeholder="Img src" name="image" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="number" placeholder="Year" name="year"/>
+            <Form.Control type="number" placeholder="Year" name="year" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="number" placeholder="Rate" name="rating"/>
+            <Form.Control type="number" placeholder="Rate" name="rating" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
@@ -53,6 +57,7 @@ function List({ search, rate }) {
         .filter((ele) => (rate ? ele.rating === rate : ele))
         .map((movie) => (
           <Card1
+            id={movie.id}
             image={movie.image}
             title={movie.title}
             rating={movie.rating}

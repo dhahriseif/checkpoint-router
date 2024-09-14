@@ -2,6 +2,8 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ReactStars from "react-stars";
+import { Link } from "react-router-dom";
+
 
 function Card1(props) {
   return (
@@ -24,7 +26,9 @@ function Card1(props) {
               />
             }
           </Card.Text>
-          <Button variant="primary">Watch Now</Button>
+          <Link to={`/movies/${props.id}`} style={{ all: "unset" }}>
+            <Button variant="primary">Watch Now</Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>

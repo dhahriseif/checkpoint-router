@@ -10,9 +10,27 @@
   display: flex !important;
   justify-content: space-between !important;
 }
-.form{
+.form {
   display: flex;
-  justify-content: center;
-  padding-left: 300px;
+  position: relative;
+  padding-right: 180px;
+  bottom: 20px;
   gap: 20px;
+}
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: underline rgb(249, 20, 20) 8px;
+  color: rgb(0, 0, 0);
+}
+.description {
+  color: rgb(5, 176, 214);
+  font-family: fantasy;
+  padding: 45px;
+}
+.home{
+  text-align: center;
+  padding: 80px;
+  font: bold 30px caption;
 }

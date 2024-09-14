@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ReactStars from "react-stars";
 
-function Navbar1({setSearch,setRate,rate}) {
+function Navbar1({ setSearch, setRate, rate }) {
   function filter(e) {
     setSearch(e.target.value);
   }
@@ -25,8 +25,22 @@ function Navbar1({setSearch,setRate,rate}) {
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
               navbarScroll
-            ></Nav>
-            <Button variant="outline-warning" onClick={() => {setRate(0)}}>Reset</Button>
+            >
+              <Nav.Link style={{ color: "red" }} href="/">
+                Home
+              </Nav.Link>
+              <Nav.Link style={{ color: "red" }} href="/movies">
+                Movies
+              </Nav.Link>
+            </Nav>
+            <Button
+              variant="outline-warning"
+              onClick={() => {
+                setRate(0);
+              }}
+            >
+              Reset
+            </Button>
             <ReactStars
               count={5}
               size={24}
